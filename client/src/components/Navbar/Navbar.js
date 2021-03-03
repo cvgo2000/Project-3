@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
+import { Link } from "react-router-dom";
 //Font Awesome Imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -8,9 +9,9 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-success fixed-top">
       <div className="container">
-        <div className="app-name">
+        <Link className="app-name" to="/">
             Tour De Hops
-        </div>
+        </Link>
         
         <button
           className="navbar-toggler"
@@ -29,10 +30,14 @@ export const Navbar = () => {
             <li className="nav-item active">
               <Link
                 smooth={true}
-                to="home"
+                to="/"
                 offset={-50}
-                className="nav-link"
-                href="#"
+                className={
+                  window.location.pathname === "/"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+                // href="#"
               >
                 Home <span className="sr-only">(current)</span>
               </Link>
@@ -40,7 +45,7 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 smooth={true}
-                to="about"
+                to="/search"
                 offset={-50}
                 className="nav-link"
                 href="#"
@@ -62,10 +67,10 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 smooth={true}
-                to="contact"
+                to="/signin"
                 offset={-50}
-                className="nav-link"
-                href="#"
+                className={window.location.pathname === "/signin" ? "nav-link active" : "nav-link"}
+                // href="#"
               >
                 Log In
               </Link>
@@ -73,10 +78,10 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 smooth={true}
-                to="contact"
+                to="/signin"
                 offset={-50}
-                className="nav-link"
-                href="#"
+                className={window.location.pathname === "/signin" ? "nav-link active" : "nav-link"}
+                // href="#"
               >
                 Sign Up
               </Link>

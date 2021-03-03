@@ -1,4 +1,5 @@
 import React from "react";
+import "../LogIn/style.css"
 
 const LogIn = () => {
   return (
@@ -41,9 +42,6 @@ const LogIn = () => {
           <button type="submit" className="btn btn-primary btn-block">
             Submit
           </button>
-          <p className="signup-link">
-            <a href="#">Sign Up</a>
-          </p>
           <p className="forgot-link">
             Forgot <a href="#">password?</a>
           </p>
