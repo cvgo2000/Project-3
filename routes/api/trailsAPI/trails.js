@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const trailsController = require("../../controllers/trailsController");
+const trailsController = require("../../../controllers/trailsController");
 
 // Matches with "/api/books"
 router.route("/").get(trailsController.findAll).post(trailsController.create);

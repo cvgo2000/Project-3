@@ -1,23 +1,23 @@
-const db = require("../models/trailModels");
+const db = require("../models/breweryModels");
 
-// Defining methods for the trailsController
+// Defining methods for the breweriesController
 module.exports = {
-  //find all trails in DB
+  //find all breweries in DB
   findAll: function (req, res) {
-    db.Trail.find(req.query)
+    db.Brewery.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  //find a trail by ID
+  //find a brewery by ID
   findById: function (req, res) {
-    db.Trail.findById(req.params.id)
+    db.Brewery.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  //add a trail to the DB
+  //add a new brewery to DB
   create: function (req, res) {
-    db.Trail.create(req.body)
+    db.Brewery.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
