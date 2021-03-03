@@ -1,4 +1,5 @@
 const express = require("express");
+const mongojs = require("mongojs")
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -10,6 +11,13 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+const databaseURL = "trails";
+const collections = ["trailseed"];
+
+const db = mongojs(databaseURL, collections);
+
+
 
 // Define API routes here
 
