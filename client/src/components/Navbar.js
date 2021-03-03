@@ -70,6 +70,17 @@ export const Navbar = () => {
                 Log In
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                smooth={true}
+                to="contact"
+                offset={-50}
+                className="nav-link"
+                href="#"
+              >
+                Sign Up
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
