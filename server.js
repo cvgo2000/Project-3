@@ -1,5 +1,5 @@
 const express = require("express");
-const mongojs = require("mongojs")
+// const mongojs = require("mongojs")
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 const databaseURL = "trails";
 const collections = ["trailseed"];
 
-const db = mongojs(databaseURL, collections);
+// const db = mongojs(databaseURL, collections);
 
 
 
