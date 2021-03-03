@@ -1,0 +1,27 @@
+/**************HEADER****************/
+.header-wrapper {
+    position: relative;
+    background: url("../../img/hopbackground.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+  }
+  
+  .main-info {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Sansita Swashed", cursive;
+    font-size: x-large;
+  }
+  
+  .main-info h1 {
+    font-size: 3.5rem;
+  }
