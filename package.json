@@ -28,6 +28,6 @@
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.8.1",
     "mongodb": "^3.2.3",
-    "mongojs": "^2.6.0",
+    "mongojs": "^2.6.0"
   }
 }
