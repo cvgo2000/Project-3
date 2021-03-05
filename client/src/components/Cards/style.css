@@ -1,0 +1,19 @@
+.card-container {
+    /* min-height: 50vh; */
+    display: flex;
+    font-weight: 400;
+    justify-content: center;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.cards {
+ /* border-color: green;
+ border-radius: 15px;
+ border-style:dotted */
+}
+
+.row {
+    padding: 1rem;
+}
