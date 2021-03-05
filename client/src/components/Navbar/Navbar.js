@@ -56,7 +56,7 @@ export const Navbar = () => {
             <li className="nav-item">
               <Link
                 smooth={true}
-                to="portfolio"
+                to="/favorites"
                 offset={-50}
                 className="nav-link"
                 href="#"

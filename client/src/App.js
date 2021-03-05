@@ -6,6 +6,7 @@ import "./App.css";
 import Home from './pages/Home'
 import UserSignIn from "./pages/UserSignIn";
 import Search from "./pages/Search";
+import Favorites from "./pages/Favorites";
 import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/signin" component={UserSignIn} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/favorites" component={Favorites} />
         </Wrapper>
       </div>
     </Router>
