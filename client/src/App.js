@@ -9,6 +9,7 @@ import Search from "./pages/Search";
 import Favorites from "./pages/Favorites";
 import Wrapper from "./components/Wrapper";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/search" component={Search} />
           <Route exact path="/favorites" component={Favorites} />
         </Wrapper>
+        <Footer />
       </div>
     </Router>
   );
