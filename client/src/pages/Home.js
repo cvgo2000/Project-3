@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../components/Header/Header'
+import RecommendedCards from '../components/Cards/RecommendedCards'
 
 const Home = () => {
     return (
         <div>
             <Header />
-            <h1>Where the trail and brews meet!</h1>
+            <RecommendedCards />
         </div>
     )
 }

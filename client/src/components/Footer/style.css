@@ -1,0 +1,21 @@
+/**************FOOTER COMPONENT****************/
+.footer {
+    padding: 1rem;
+  }
+  
+  .footer p {
+    margin: 1rem;
+    /* padding: 1rem; */
+    font-size: 1rem;
+    justify-content: center;
+  }
+  
+  .copyright {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .icon  {
+    margin: 1rem;
+    padding: 1rem;
+  }
