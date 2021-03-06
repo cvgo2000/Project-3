@@ -21,4 +21,11 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+  //find a trail by city
+  findByCity: function (req, res) {
+    console.log(req.body);
+    db.Trail.findAll({ location: req.body })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
 };
