@@ -4,10 +4,13 @@ const db = require("../models/trailModels");
 module.exports = {
   //find all trails in DB
   findAll: function (req, res) {
-    db.Trail.find(req.query)
-      .sort({ date: -1 })
-      .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
+    console.log("inside of findAll");
+    // console.log(req.body);
+    // res.send(req.body);
+    db.Trail.find(req.body)
+      //   .sort({ date: -1 })
+      .then((dbModel) => res.json(dbModel));
+    //   .catch((err) => res.status(422).json(err));
   },
   //find a trail by ID
   findById: function (req, res) {
