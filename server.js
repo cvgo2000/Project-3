@@ -1,5 +1,7 @@
 const express = require("express");
-const mongojs = require("mongojs")
+const mongojs = require("mongojs");
+const mongoose = require("mongoose");
+const route = require("./routes");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -17,9 +19,8 @@ const collections = ["trailseed"];
 
 // const db = mongojs(databaseURL, collections);
 
-
-
 // Define API routes here
+app.use(route);
 
 // Send every other request to the React app
 // Define any API routes before this runs

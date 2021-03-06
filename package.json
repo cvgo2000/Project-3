@@ -23,6 +23,6 @@
     "if-env": "^1.0.4",
     "mongodb": "^3.2.3",
     "mongojs": "^2.6.0",
-    "react-router-dom": "^5.2.0"
+
   }
 }

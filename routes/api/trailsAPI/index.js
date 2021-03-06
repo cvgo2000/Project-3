@@ -1,7 +1,15 @@
 const router = require("express").Router();
-const trailRoutes = require("./trails");
+const trailsController = require("../../../controllers/trailsController");
 
-// Trail routes
-router.use("/trails", trailRoutes);
+// Matches with GET "/api/trails"              POST /api/trails
+router.route("/").get(trailsController.findAll);
+// .post(trailsController.create);
+
+// Matches with "/api/books/:id"
+// router
+//   .route("/:id")
+//   .get(trailsController.findById)
+//   .put(trailsController.update)
+//   .delete(trailsController.remove);
 
 module.exports = router;
