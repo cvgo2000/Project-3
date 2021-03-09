@@ -19,6 +19,12 @@ const collections = ["trailseed"];
 
 // const db = mongojs(databaseURL, collections);
 
+//Added connection to seedDB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trails", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+});
+
 // Define API routes here
 app.use(route);
 

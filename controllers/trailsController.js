@@ -1,4 +1,4 @@
-const db = require("../models/trailModels");
+const db = require("../models/trailModels/trail");
 
 // Defining methods for the trailsController
 module.exports = {
