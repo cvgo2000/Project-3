@@ -1,10 +1,10 @@
-const db = require("../models/trailModels");
+const db = require("../models/trailModels/trail");
 
 // Defining methods for the trailsController
 module.exports = {
   //find all trails in DB
   findAll: function (req, res) {
-    console.log("inside of findAll");
+    console.log(req.body);
     // console.log(req.body);
     // res.send(req.body);
     db.Trail.find(req.body)
