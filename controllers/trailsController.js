@@ -4,7 +4,7 @@ const db = require("../models/trailModels");
 module.exports = {
   //find all trails in DB
   findAll: function (req, res) {
-    console.log("inside of findAll");
+    console.log(req.body);
     // console.log(req.body);
     // res.send(req.body);
     db.Trail.find(req.body)
