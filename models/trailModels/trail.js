@@ -14,6 +14,6 @@ const trailSchema = new Schema({
   link: { type: String, required: true },
 });
 
-const Trails = mongoose.model("Trails", trailSchema);
+const Trail = mongoose.model("Trail", trailSchema);
 
-module.exports = Trails;
+module.exports = Trail;
