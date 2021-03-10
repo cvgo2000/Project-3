@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all trails
-  getTrails: function (query) {
-    return axios.get(`${query}`);
+  getTrails: function (data) {
+    return axios.get(`/api/trails`, data);
   },
   // Gets the trails with the given id
   getTrail: function (id) {
