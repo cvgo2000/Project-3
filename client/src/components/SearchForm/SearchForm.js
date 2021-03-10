@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
-import { FaAmericanSignLanguageInterpreting } from "react-icons/fa";
+import React, { useState, useRef, useEffect } from "react";
+// import { } from "react-icons/fa";
 import "../SearchForm/style.css";
-import API from "../../utils/API"
-
+import API from "../../utils/API";
 
 const SearchForm = ({ setTrails }) => {
   const [userInput, setUserInput] = useState("");
@@ -13,16 +12,17 @@ const SearchForm = ({ setTrails }) => {
     console.log(userInput);
 
     //make a call to your backend for trails
+    const loadTrails = (data) => {
+      API.getTrails(data)
+        .then((res) => {
+          // console.log(res)
+          setTrails(res.data)
+        })
+        .catch((err) => console.log(err));
+    };
+    
     // once you have results setTrails(results)
-    loadTrails()
-  }
-
-   const loadTrails =()=> {
-    API.getTrails()
-      .then(res => 
-        setTrails(res.data)
-      )
-      .catch(err => console.log(err));
+    loadTrails();
   };
 
 
@@ -36,12 +36,16 @@ const SearchForm = ({ setTrails }) => {
             placeholder="Search"
             value={userInput}
             onChange={() => {
-              setUserInput(inputEl.current.value)
+              setUserInput(inputEl.current.value);
             }}
             className="form-control"
             ref={inputEl}
           />
-          <button type="submit" className="btn btn-primary">
+          <button 
+          type="submit" 
+          className="btn btn-primary"
+          // onClick={props.handleFormSubmit}
+          >
             Submit
           </button>
         </form>
@@ -51,3 +55,8 @@ const SearchForm = ({ setTrails }) => {
 };
 
 export default SearchForm;
+
+// Do we want to add the dropdown list????
+// <datalist id="breeds">
+//         {props.breeds.map(breed => <option value={breed} key={breed} />)}
+//       </datalist>
