@@ -1,4 +1,4 @@
 module.exports = {
-  Trails: require("./trailModels/trail.js"),
-  Brewery: require("./breweryModels/brewery.js"),
+  Trail: require("./trail"),
+  Brewery: require("./brewery"),
 };
