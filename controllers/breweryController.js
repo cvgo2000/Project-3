@@ -1,4 +1,4 @@
-const db = require("../models/breweryModels");
+const db = require("../models/");
 
 // Defining methods for the breweriesController
 module.exports = {
