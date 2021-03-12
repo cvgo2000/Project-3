@@ -1,8 +1,9 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
-  SET_CURRENT_TRAIL,
-  UPDATE_TRAILS,
-  ADD_TRAIL,
+  SET_CURRENT_POST,
+  REMOVE_POST,
+  UPDATE_POSTS,
+  ADD_POST,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -14,25 +15,33 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case SET_CURRENT_TRAIL:
+    case SET_CURRENT_POST:
       return {
         ...state,
         currentPost: action.post,
         loading: false,
       };
 
-    case UPDATE_TRAILS:
+    case UPDATE_POSTS:
       return {
         ...state,
         posts: [...action.posts],
         loading: false,
       };
 
-    case ADD_TRAIL:
+    case ADD_POST:
       return {
         ...state,
         posts: [action.post, ...state.posts],
         loading: false,
+      };
+
+    case REMOVE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter((post) => {
+          return post._id !== action._id;
+        }),
       };
 
     case ADD_FAVORITE:
