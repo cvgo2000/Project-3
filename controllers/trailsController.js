@@ -4,30 +4,12 @@ const db = require("../models/trailModels/trail");
 module.exports = {
   //find all trails in DB
   findAll: function (req, res) {
-    // console.log(req.body);
-    // res.send(req.body);
-    //TEST ARRAY TO SEND TO FRONT END
-    const estes = [
-      {
-        trail: "Loch Vale Trail",
-        difficulty: "Intermediate",
-        location: "Estes Park",
-        distance: "6.5 km",
-        link: "https://www.hikingproject.com/trail/7000278/loch-vale-trail",
-      },
-      {
-        trail: "Sky Pond",
-        difficulty: "Difficult",
-        location: "Estes Park",
-        distance: "13.3 km",
-        link: "https://www.hikingproject.com/trail/7002175/sky-pond",
-      },
-    ];
-    res.json(estes);
-    // db.find(req.body)
-    //   //   //   //   .sort({ date: -1 })
-    //   .then((dbModel) => console.log(dbModel));
-    //   .catch((err) => res.status(422).json(err));
+   db.Trails.findOne(req.body)
+   .then((result) => {
+     console.log(result);
+     res.send(result)
+   })
+  
   },
   //find a trail by ID
   findById: function (req, res) {
@@ -41,6 +23,15 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+<<<<<<< HEAD
+  //find a trail by ID
+  findById: function (req, res) {
+    db.Trail.findById(req.params.id)
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
+=======
+>>>>>>> 0534f563d5280a674a00d1100dee5851789adfb4
   //find a trail by city
   findByCity: function (req, res) {
     console.log(req.body);
