@@ -17,7 +17,6 @@ export default {
   createTrail: function (trailData) {
     return axios.post("/api/trails", trailData).then((result) => result.data);
   },
-
   // Shows saved trails
   savedTrails: function () {
     return axios.get("/api/trails").then((result) => result.data);

@@ -1,14 +1,7 @@
-const db = require("../models/breweryModels");
+const db = require("../models");
 
 // Defining methods for the breweriesController
 module.exports = {
-  //find all breweries in DB
-  findAll: function (req, res) {
-    db.Brewery.find(req.query)
-      .sort({ date: -1 })
-      .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
-  },
   //find a brewery by ID
   findById: function (req, res) {
     db.Brewery.findById(req.params.id)
