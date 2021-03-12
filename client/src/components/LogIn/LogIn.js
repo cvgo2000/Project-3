@@ -2,6 +2,16 @@ import React from "react";
 import "../LogIn/style.css"
 
 const LogIn = () => {
+  
+  
+  //handleChange & handleSubmit????
+  
+  
+  //For redirecting to Favorites page???
+  //under handleSubmit function --> put <Redirect to="/ticket-list"/>;?
+  
+  
+  
   return (
     <div className="container">
       <div className="login">

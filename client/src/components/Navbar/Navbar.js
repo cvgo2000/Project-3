@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 //Font Awesome Imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import logo from '../../img/logo_transparent.png'
+// import logo from '../../img/logo_transparent.png'
 import "../Navbar/style.css"
 
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-success fixed-top">
       <div className="container">
-        <Link to="/">
+        {/* <Link to="/">
             <img src={logo} alt="logo" className="app-logo"/>
-        </Link>
+        </Link> */}
         
         <button
           className="navbar-toggler"

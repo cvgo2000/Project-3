@@ -14,10 +14,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// const databaseURL = "trails";
-// const collections = ["trailseed"];
+const databaseURL = "trails";
+const collections = ["trailseed"];
 
-// const db = mongojs(databaseURL, collections);
+const db = mongojs(databaseURL, collections);
 
 //Added connection to seedDB
 mongoose.connect(
