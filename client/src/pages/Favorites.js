@@ -1,14 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import SearchForm from "../components/SearchForm/SearchForm";
-import Cards from "../components/Cards/Cards";
+import Results from "../components/SearchResults/SearchResult";
 
 const Favorites = () => {
+  const [trails, setTrails] = useState([])
+  
   return (
     <div className="container">
       <div className="favorite">
         <h2>Search your favorite Trails or Brews</h2>
-        <SearchForm />
-        <Cards />
+        <SearchForm setTrails={setTrails}/>
+        <Results trails={trails} />
       </div>
     </div>
   );
