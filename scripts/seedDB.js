@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
+<<<<<<< HEAD
+// This file empties the Books collection and inserts the books below
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trails");
+=======
 
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/trails"
 );
+>>>>>>> 0534f563d5280a674a00d1100dee5851789adfb4
 
 const trailSeed = [
   {

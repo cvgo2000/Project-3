@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
 const databaseURL = "trails";
 const collections = ["trailseed"];
 
-// const db = mongojs(databaseURL, collections);
+const db = mongojs(databaseURL, collections);
 
 //Added connection to seedDB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trails", {
