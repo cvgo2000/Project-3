@@ -28,7 +28,7 @@ mongoose.connect(
     useFindAndModify: false,
   },
   () => {
-    console.log("connected to database");
+    console.log("Connected to database");
   }
 );
 
