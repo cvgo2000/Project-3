@@ -8,10 +8,8 @@ router
   .post(breweriesController.create);
 
 // Matches with "/api/breweries/:id"
-router
-  .route("/:id")
-  .get(breweriesController.findById)
-  .put(breweriesController.update)
-  .delete(breweriesController.remove);
+router.route("/:id").get(breweriesController.findById);
+// .put(breweriesController.update)
+// .delete(breweriesController.remove);
 
 module.exports = router;
