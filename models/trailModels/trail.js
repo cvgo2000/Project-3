@@ -12,6 +12,8 @@ const trailSchema = new Schema({
   distance: Number,
   //link will be an href/string
   link: { type: String, required: true },
+  //link to image will be an href/string
+  image: { type: String, required: true },
 });
 
 const Trails = mongoose.model("Trails", trailSchema);
