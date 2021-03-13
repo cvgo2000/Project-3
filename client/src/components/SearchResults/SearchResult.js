@@ -9,7 +9,7 @@ const SearchResult = ({ trails }) => {
     <div className="container">
       <div className="results">
         Results
-        {trails.map((trail) => (
+        {trails.location.filter(location => location.includes('D')).map((trail) => (
           <CardDeck>
             <Card key={trail.id} style={{ width: "18rem" }}>
             <Card.Img variant="top" src="https://cdn2.apstatic.com/photos/hike/7053480_large_1555703487.jpg" />
