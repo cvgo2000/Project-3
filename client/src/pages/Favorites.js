@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import SearchForm from "../components/SearchForm/SearchForm";
-import Results from "../components/SearchResults/SearchResult";
+import Results from "../components/SearchResults/SearchTrailResult";
 
 const Favorites = () => {
   const [trails, setTrails] = useState([])
