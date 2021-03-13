@@ -14,6 +14,8 @@ const trailSchema = new Schema({
   link: { type: String, required: true },
   //link to image will be an href/string
   image: { type: String, required: true },
+  //rating will be a string
+  rating: { type: String, required: true },
 });
 
 const Trails = mongoose.model("Trails", trailSchema);
