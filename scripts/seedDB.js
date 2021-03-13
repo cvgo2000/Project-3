@@ -166,13 +166,6 @@ const trailSeed = [
     link:
       "https://www.hikingproject.com/trail/7000499/mills-lake-black-lake-trail",
   },
-  {
-    trail: "",
-    difficulty: "",
-    location: "",
-    distance: " km",
-    link: "",
-  },
 ];
 
 db.Trails.remove({})
