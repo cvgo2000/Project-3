@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Trails collection and inserts the books below
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trails");
+// This file empties the Trails collection and inserts the trails below
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trails_db");
 
 const trailSeed = [
   {
@@ -12,7 +12,8 @@ const trailSeed = [
     distance: "11.0 km",
     link:
       "https://www.hikingproject.com/trail/7091963/matthew-winters-to-dakota-ridge-trail",
-    
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7055207_medium_1555708575.jpg",
   },
   {
     trail: "Centennial Cone Loop",
@@ -20,6 +21,8 @@ const trailSeed = [
     location: "Idaho Springs",
     distance: "27.7 km",
     link: "https://www.hikingproject.com/trail/7010705/centennial-cone-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7007207_medium_1554322392.jpg",
   },
   {
     trail: "Denver Zoo",
@@ -27,6 +30,8 @@ const trailSeed = [
     location: "Denver",
     distance: "4.2 km",
     link: "https://www.hikingproject.com/trail/7018092/denver-zoo",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7017886_medium_1554829962.jpg",
   },
   {
     trail: "Golden Cliffs Loop",
@@ -34,6 +39,8 @@ const trailSeed = [
     location: "Golden",
     distance: "2.6 km",
     link: "https://www.hikingproject.com/trail/7049083/golden-cliffs-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7004821_medium_1554310856.jpg",
   },
   {
     trail: "Mount Morrison",
@@ -41,6 +48,8 @@ const trailSeed = [
     location: "Morrison",
     distance: "5.8 km",
     link: "https://www.hikingproject.com/trail/7027384/mount-morrison",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7055405_medium_1555709037.jpg",
   },
   {
     trail: "Highline Canal Trail",
@@ -48,6 +57,8 @@ const trailSeed = [
     location: "Roxborough Park",
     distance: "98.7 km",
     link: "https://www.hikingproject.com/trail/7008385/highline-canal-trail",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7007020_medium_1554321989.jpg",
   },
   {
     trail: "Mule Deer and Coyote Trail Loop",
@@ -56,6 +67,8 @@ const trailSeed = [
     distance: "9.2 km",
     link:
       "https://www.hikingproject.com/trail/7035817/mule-deer-and-coyote-trail-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7070457_medium_1593295528.jpg",
   },
   {
     trail: "Three Sisters Loop",
@@ -63,6 +76,8 @@ const trailSeed = [
     location: "Evergreen",
     distance: "6.1 km",
     link: "https://www.hikingproject.com/trail/7025006/three-sisters-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7021291_medium_1554839401.jpg",
   },
   {
     trail: "Dream Lake Trail",
@@ -70,6 +85,8 @@ const trailSeed = [
     location: "Rocky Mountain National Park",
     distance: "1.6 km",
     link: "https://www.hikingproject.com/trail/7001047/dream-lake-trail",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7031006_medium_1554928949.jpg",
   },
   {
     trail: "Loch Vale Trail",
@@ -77,6 +94,8 @@ const trailSeed = [
     location: "Estes Park",
     distance: "6.5 km",
     link: "https://www.hikingproject.com/trail/7000278/loch-vale-trail",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7053480_medium_1555703487.jpg",
   },
   {
     trail: "Sky Pond",
@@ -84,6 +103,8 @@ const trailSeed = [
     location: "Estes Park",
     distance: "13.3 km",
     link: "https://www.hikingproject.com/trail/7002175/sky-pond",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7008750_medium_1554395076.jpg",
   },
   {
     trail: "Bear Lake Trail",
@@ -91,6 +112,8 @@ const trailSeed = [
     location: "Estes Park",
     distance: "1.0 km",
     link: "https://www.hikingproject.com/trail/7000425/bear-lake-trail",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7000788_medium_1554159649.jpg",
   },
   {
     trail: "Chavez and Beaver Brook Trail Loop",
@@ -99,6 +122,8 @@ const trailSeed = [
     distance: "6.3 km",
     link:
       "https://www.hikingproject.com/trail/7011049/chavez-and-beaver-brook-trail-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7013651_medium_1554822936.jpg",
   },
   {
     trail: "Mountain Lion Trail",
@@ -106,6 +131,8 @@ const trailSeed = [
     location: "Coal Creek",
     distance: "11.1 km",
     link: "https://www.hikingproject.com/trail/7009076/mountain-lion-trail",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7007157_medium_1554322291.jpg",
   },
   {
     trail: "Alderfer/Three Sisters Loop",
@@ -114,6 +141,8 @@ const trailSeed = [
     distance: "10.6 km",
     link:
       "https://www.hikingproject.com/trail/7003115/alderferthree-sisters-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7021291_medium_1554839401.jpg",
   },
   {
     trail: "Sunshine Lion's Lair Loop",
@@ -122,6 +151,8 @@ const trailSeed = [
     distance: "8.5 km",
     link:
       "https://www.hikingproject.com/trail/7004226/sunshine-lions-lair-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7004293_medium_1554244580.jpg",
   },
   {
     trail: "Mount Sanitas Loop",
@@ -129,6 +160,8 @@ const trailSeed = [
     location: "Boulder",
     distance: "5.2 km",
     link: "https://www.hikingproject.com/trail/7000000/mount-sanitas-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7029509_medium_1554924656.jpg",
   },
   {
     trail: "Mt. Bierstadt - West Slopes",
@@ -137,6 +170,8 @@ const trailSeed = [
     distance: "11.6 km",
     link:
       "https://www.hikingproject.com/trail/7001739/mt-bierstadt-west-slopes",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7037364_medium_1555085823.jpg",
   },
   {
     trail: "South Arapaho Peak",
@@ -144,6 +179,8 @@ const trailSeed = [
     location: "Nederland",
     distance: "13.8 km",
     link: "https://www.hikingproject.com/trail/7006885/south-arapaho-peak",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7024359_medium_1554846789.jpg",
   },
   {
     trail: "Herman Gulch Trail #98",
@@ -151,6 +188,8 @@ const trailSeed = [
     location: "Georgetown",
     distance: "5.3 km",
     link: "https://www.hikingproject.com/trail/7006073/herman-gulch-trail-98",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7024352_medium_1554846773.jpg",
   },
   {
     trail: "Chief Mountain Trail #58",
@@ -158,6 +197,8 @@ const trailSeed = [
     location: "Idaho Springs",
     distance: "2.4 km",
     link: "https://www.hikingproject.com/trail/7006074/chief-mountain-trail-58",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7047977_medium_1555538253.jpg",
   },
   {
     trail: "Mills Lake - Black Lake Trail",
@@ -166,6 +207,8 @@ const trailSeed = [
     distance: "5.2 km",
     link:
       "https://www.hikingproject.com/trail/7000499/mills-lake-black-lake-trail",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7000877_medium_1554159770.jpg",
   },
 ];
 
