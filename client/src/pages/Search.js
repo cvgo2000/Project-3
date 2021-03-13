@@ -8,6 +8,8 @@ const Search = () => {
   // Setting our component's initial state
   const [trails, setTrails] = useState([])
 
+  //
+
     return (
       <div className="container">
         <div className="search">
@@ -21,3 +23,5 @@ const Search = () => {
 
 
 export default Search;
+
+//wherever state is held, create a function to filter to then pass down child ---> pass down the value

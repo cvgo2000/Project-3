@@ -15,7 +15,7 @@ const SearchForm = ({ setTrails }) => {
     const loadTrails = (data) => {
       API.getTrails(data)
         .then((res) => {
-          // console.log(res)
+          console.log("search-form", res)
           setTrails(res.data)
         })
         .catch((err) => console.log(err));

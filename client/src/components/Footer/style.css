@@ -1,6 +1,8 @@
 /**************FOOTER COMPONENT****************/
 .footer {
     padding: 1rem;
+    margin-top: -3rem;
+
   }
   
   .footer p {
@@ -20,3 +22,13 @@
     margin: 1rem;
     padding: 1rem;
   }
+
+  /* .logo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+  } */
+
+  
