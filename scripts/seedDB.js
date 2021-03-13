@@ -12,6 +12,7 @@ const trailSeed = [
     distance: "11.0 km",
     link:
       "https://www.hikingproject.com/trail/7091963/matthew-winters-to-dakota-ridge-trail",
+    
   },
   {
     trail: "Centennial Cone Loop",

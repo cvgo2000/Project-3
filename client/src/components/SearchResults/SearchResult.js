@@ -9,9 +9,10 @@ const SearchResult = ({ trails }) => {
     <div className="container">
       <div className="results">
         Results
-        <CardDeck>
-          {trails.map((trail) => (
+        {trails.map((trail) => (
+          <CardDeck>
             <Card key={trail.id} style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="https://cdn2.apstatic.com/photos/hike/7053480_large_1555703487.jpg" />
               <Card.Body>
                 <Card.Title>{trail.trail}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -24,8 +25,8 @@ const SearchResult = ({ trails }) => {
                 <Card.Link href="#">{trail.link}</Card.Link>
               </Card.Body>
             </Card>
-          ))}
-        </CardDeck>
+          </CardDeck>
+        ))}
       </div>
     </div>
   );
