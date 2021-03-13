@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Trails collection and inserts the books below
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trails");
+// This file empties the Trails collection and inserts the trails below
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/trails_db");
 
 const trailSeed = [
   {
@@ -12,6 +12,8 @@ const trailSeed = [
     distance: "11.0 km",
     link:
       "https://www.hikingproject.com/trail/7091963/matthew-winters-to-dakota-ridge-trail",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7055207_medium_1555708575.jpg",
   },
   {
     trail: "Centennial Cone Loop",
@@ -19,6 +21,8 @@ const trailSeed = [
     location: "Idaho Springs",
     distance: "27.7 km",
     link: "https://www.hikingproject.com/trail/7010705/centennial-cone-loop",
+    image:
+      "https://cdn2.apstatic.com/photos/hike/7007207_medium_1554322392.jpg",
   },
   {
     trail: "Denver Zoo",
