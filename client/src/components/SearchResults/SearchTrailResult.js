@@ -2,13 +2,13 @@ import React from "react";
 import { Card, CardDeck } from "react-bootstrap";
 import "../Cards/style.css";
 
-const SearchResult = ({ trails }) => {
+const SearchTrailResult = ({ filteredTrails }) => {
 
   return (
     <div className="container">
       <div className="results">
-        Results
-        {trails.filter(trail => trail.location.includes('G')).map((trail) => (
+        Trail Results
+        {filteredTrails.map((trail) => (
           <CardDeck>
             <Card key={trail.id} style={{ width: "18rem" }}>
             <Card.Img variant="top" src="https://cdn2.apstatic.com/photos/hike/7053480_large_1555703487.jpg" />
@@ -31,4 +31,4 @@ const SearchResult = ({ trails }) => {
   );
 };
 
-export default SearchResult;
+export default SearchTrailResult;
