@@ -10,19 +10,21 @@ const SearchResult = ({ trails }) => {
       <div className="results">
         Results
         <CardDeck>
-        {trails.map((trail) => (<Card key={trail.id} style={{ width: "18rem" }}>
-          <Card.Body>
-            <Card.Title>{trail.trail}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {trail.location}
-            </Card.Subtitle>
-            <Card.Text>
-              {trail.distance}
-              {trail.difficulty}
-            </Card.Text>
-            <Card.Link href="#">{trail.link}</Card.Link>
-          </Card.Body>
-        </Card>))}
+          {trails.map((trail) => (
+            <Card key={trail.id} style={{ width: "18rem" }}>
+              <Card.Body>
+                <Card.Title>{trail.trail}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  {trail.location}
+                </Card.Subtitle>
+                <Card.Text>
+                  {trail.distance}
+                  {trail.difficulty}
+                </Card.Text>
+                <Card.Link href="#">{trail.link}</Card.Link>
+              </Card.Body>
+            </Card>
+          ))}
         </CardDeck>
       </div>
     </div>
@@ -30,4 +32,3 @@ const SearchResult = ({ trails }) => {
 };
 
 export default SearchResult;
-
