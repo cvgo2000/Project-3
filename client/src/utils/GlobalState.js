@@ -1,9 +1,9 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
-  SET_CURRENT_POST,
-  REMOVE_POST,
-  UPDATE_POSTS,
-  ADD_POST,
+  SET_CURRENT_TRAIL,
+  REMOVE_TRAIL,
+  UPDATE_TRAILS,
+  ADD_TRAIL,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -15,28 +15,28 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case SET_CURRENT_POST:
+    case SET_CURRENT_TRAIL:
       return {
         ...state,
         currentPost: action.post,
         loading: false,
       };
 
-    case UPDATE_POSTS:
+    case UPDATE_TRAILS:
       return {
         ...state,
         posts: [...action.posts],
         loading: false,
       };
 
-    case ADD_POST:
+    case ADD_TRAIL:
       return {
         ...state,
         posts: [action.post, ...state.posts],
         loading: false,
       };
 
-    case REMOVE_POST:
+    case REMOVE_TRAIL:
       return {
         ...state,
         posts: state.posts.filter((post) => {
@@ -87,6 +87,8 @@ const StoreProvider = ({ value = [], ...props }) => {
       location: "",
       distance: "",
       link: "",
+      image: "",
+      rating: "",
     },
     favorites: [],
     loading: false,

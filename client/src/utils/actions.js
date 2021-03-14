@@ -1,8 +1,8 @@
 //Add or update trails and add/remove favorite trails
-export const UPDATE_POSTS = "UPDATE_POSTS";
-export const REMOVE_POST = "REMOVE_POST";
-export const SET_CURRENT_POST = "SET_CURRENT_POST";
-export const ADD_POST = "ADD_POST";
+export const UPDATE_TRAILS = "UPDATE_TRAIL";
+export const REMOVE_TRAIL = "REMOVE_TRAIL";
+export const SET_CURRENT_TRAIL = "SET_CURRENT_TRAIL";
+export const ADD_TRAIL = "ADD_TRAIL";
 export const LOADING = "LOADING";
 
 export const ADD_FAVORITE = "ADD_FAVORITE";
