@@ -33,12 +33,7 @@ const trailSeed = [
     distance: 4.2,
     link: "https://www.hikingproject.com/trail/7018092/denver-zoo",
     image:
-<<<<<<< HEAD
-      "https://cdn2.apstatic.com/photos/hike/7017886_medium_1554829962.jpg",
-    rating: "4.5 Stars",
-=======
       "https://i.pinimg.com/600x315/78/c7/09/78c7097652fb48c30ec68db5c44c34f9.jpg",
->>>>>>> 40be37cf74bae5a7aa7114ceddb14f0c5b398370
   },
   {
     trail: "Golden Cliffs Loop",
@@ -160,12 +155,7 @@ const trailSeed = [
     link:
       "https://www.hikingproject.com/trail/7003115/alderferthree-sisters-loop",
     image:
-<<<<<<< HEAD
-      "https://cdn2.apstatic.com/photos/hike/7021291_medium_1554839401.jpg",
-    rating: "4.4 Stars",
-=======
       "https://cdn-assets.alltrails.com/uploads/photo/image/23690794/large_7b082a4cfd668007026c0c81a06b19e6.jpg",
->>>>>>> 40be37cf74bae5a7aa7114ceddb14f0c5b398370
   },
   {
     trail: "Sunshine Lion's Lair Loop",
