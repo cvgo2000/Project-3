@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../img/logo_transparent.png";
 import "../Navbar/style.css";
+import AuthNav from "../auth-nav";
 
 export const Navbar = () => {
   return (
@@ -36,7 +37,7 @@ export const Navbar = () => {
                       ? "nav-link active"
                       : "nav-link"
                   }
-                  // href="#"
+                // href="#"
                 >
                   Home <span className="sr-only">(current)</span>
                 </Link>
@@ -63,8 +64,8 @@ export const Navbar = () => {
                   Favorites
                 </Link>
               </li>
-           
-              <li className="nav-item">
+
+              {/* <li className="nav-item">
                 <Link
                   smooth={true}
                   to="/signin"
@@ -93,7 +94,8 @@ export const Navbar = () => {
                 >
                   Sign Up
                 </Link>
-              </li>
+              </li> */}
+              <AuthNav />
             </ul>
           </div>
         </div>
