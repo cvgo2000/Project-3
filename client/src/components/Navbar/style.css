@@ -1,24 +1,11 @@
 /* *********NAVBAR*********** */
 
-.app-logo {
-  height: 170px;
-  width: 170px;
-  margin-top: -2rem;
-  margin-bottom: -3.5rem;
-}
-
 .navbar {
-  background-color: rgb(255, 255, 255);
+  background-color: #ecf1cb;
+  
 }
 
-.col {
-  text-align: center;
-}
 
 .nav-item {
   margin-right: auto;
-}
-
-#user {
-  text-align: right;
 }

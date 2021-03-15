@@ -1,7 +1,7 @@
 import React from "react";
 import "../../components/Footer/style.css";
-import { FaCopyright } from "react-icons/fa";
-// import logo from "../../img/logo_transparent.png";
+import { FaCopyright, FaGithub } from "react-icons/fa";
+import { Nav } from "react-bootstrap";
 
 const Footer = () => {
   return (
@@ -9,10 +9,12 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12" >
-              {/* <img className="logo" src={logo} alt="logo" /> */}
               <p className="copyright">
                 <FaCopyright size={30} /> Christian Go, Cody Chen, Cody Johnson,
-                Devyn Bailey
+                Devyn Bailey 
+                <br />
+                <Nav.Link href="https://github.com/cvgo2000/Project-3" target="_blank"><FaGithub size={30} /></Nav.Link>
+                
               </p>
             
           </div>
