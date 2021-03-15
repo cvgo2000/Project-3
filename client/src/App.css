@@ -3,7 +3,7 @@ h1 {
     text-align: center;
 }
 
-/* **********SEARCH PAGE*************** */
+/* **********SIGN UP/IN PAGE*************** */
 #sign {
     margin-top: 5rem;
     margin-bottom: -4rem;
@@ -13,9 +13,29 @@ h1 {
 /* **********SEARCH PAGE*************** */
 
 .search {
-    margin: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    margin-left: -5rem;
+    margin-right: -5rem;
+    padding: 1rem;
 }
 
+.search-form {
+    background: url("../src/img/hops-background.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.form-label {
+    color: #eef0e5;
+    font-weight: bolder;
+}
+
+.col-md-6 {
+    padding-left: -1rem;
+    padding-right: -1rem;
+}
 
 /* **********FAVORITES PAGE*************** */
 

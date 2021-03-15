@@ -54,8 +54,9 @@ const Search = () => {
   return (
     <div className="container">
       <div className="search">
-        <h2>Search for Trails or Brews</h2>
-        <div className="container">
+        <div className="search-container">
+          <h2>Search for Trails or Brews</h2>
+
           <div className="search-form">
             <form onSubmit={formSubmit}>
               <label className="form-label">Search by City</label>
@@ -84,13 +85,11 @@ const Search = () => {
           <div className="col-md-6">
             <SearchTrailResult filteredTrails={filteredTrails} />
           </div>
-          <div className="col-md-6"><SearchBrewResult breweries={breweries} />
+          <div className="col-md-6">
+            <SearchBrewResult breweries={breweries} />
           </div>
-          
         </div>
-        
       </div>
-      
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardDeck, Nav, Button } from "react-bootstrap";
-import "../Cards/style.css";
 import coBrewImg from "../../img/co-craft-beer.jpg";
+import "../SearchResults/style.css"
 
 const SearchBrewResult = ({ breweries }) => {
   return (
@@ -10,7 +10,7 @@ const SearchBrewResult = ({ breweries }) => {
         Brewery Results
         {breweries.map((brewery) => (
           <CardDeck>
-            <Card key={brewery.id} style={{ width: "18rem" }}>
+            <Card className="result-card" key={brewery.id} style={{ width: "18rem"}}>
               <Card.Img variant="top" src={coBrewImg} />
               <Card.Body>
                 <Card.Title>{brewery.name}</Card.Title>
@@ -24,10 +24,12 @@ const SearchBrewResult = ({ breweries }) => {
                 </Card.Text>
               </Card.Body>
               <Card.Footer className="text-muted">
+                <div className='row'>
                 <Nav.Item>
-                  <Nav.Link href={brewery.website_url} target="_blank">Visit Site</Nav.Link>
+                  <Nav.Link className="nav-link"href={brewery.website_url} target="_blank">Visit Site</Nav.Link>
                 </Nav.Item>
                 <Button variant="primary">Save Brewery</Button>
+                </div>
               </Card.Footer>
             </Card>
           </CardDeck>

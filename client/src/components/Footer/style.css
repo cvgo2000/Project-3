@@ -1,8 +1,11 @@
 /**************FOOTER COMPONENT****************/
 .footer {
-    padding: 1rem;
-    margin-top: -3rem;
-
+    padding: 2rem;
+    margin-top: -6rem;
+    /* background: url('../../img/hops-background.png') no-repeat;
+    background-size: cover;
+    background-position: center; */
+    background-color: #ecf1cb;
   }
   
   .footer p {
@@ -10,6 +13,7 @@
     /* padding: 1rem; */
     font-size: 1rem;
     justify-content: center;
+    color: black;
   }
   
   .copyright {
