@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import SearchTrailResult from "../components/SearchResults/SearchTrailResult";
 import SearchBrewResult from "../components/SearchResults/SearchBrewResult";
 import API from "../../src/utils/API";
-import { Card, CardDeck } from "react-bootstrap";
+// import { Card, CardDeck } from "react-bootstrap";
 import "../components/Cards/style.css";
 import axios from "axios";
 
