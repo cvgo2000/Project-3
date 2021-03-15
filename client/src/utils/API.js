@@ -7,7 +7,7 @@ export default {
   },
   // Gets the trails with the given id
   getTrail: function (id) {
-    return axios.get(id);
+    return axios.get("/api/trails/" + id);
   },
   // Gets trails by city
   getTrailByCity: function (req) {
