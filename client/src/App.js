@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { StoreProvider } from "./utils/GlobalState";
+import { GlobalProvider } from "./utils/GlobalState";
 
 import Home from "./pages/Home";
 import UserSignIn from "./pages/UserSignIn";
@@ -14,9 +14,9 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <Router>
-      <div>
-        <StoreProvider>
+    <GlobalProvider>
+      <Router>
+        <div>
           <Navbar />
           <Wrapper>
             <Route exact path="/" component={Home} />
@@ -25,9 +25,9 @@ function App() {
             <Route exact path="/favorites" component={Favorites} />
           </Wrapper>
           <Footer />
-        </StoreProvider>
-      </div>
-    </Router>
+        </div>
+      </Router>
+    </GlobalProvider>
   );
 }
 

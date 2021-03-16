@@ -2,4 +2,15 @@
 
 .add-container {
     background-color: #ecf1cb;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    padding: 1rem;
+}
+
+.add-card-container {
+    
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }

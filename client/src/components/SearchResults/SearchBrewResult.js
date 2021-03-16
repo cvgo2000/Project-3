@@ -1,12 +1,12 @@
 import React from "react";
-import { Card, CardDeck, Nav, Button } from "react-bootstrap";
+import { Card, CardDeck, Nav, Button, Container, Row } from "react-bootstrap";
 import coBrewImg from "../../img/co-craft-beer.jpg";
 import "../SearchResults/style.css"
 
 const SearchBrewResult = ({ breweries }) => {
   return (
-    <div className="container">
-      <div className="results">
+    <Container>
+      <Container className="results">
         Brewery Results
         {breweries.map((brewery) => (
           <CardDeck>
@@ -24,18 +24,18 @@ const SearchBrewResult = ({ breweries }) => {
                 </Card.Text>
               </Card.Body>
               <Card.Footer className="text-muted">
-                <div className='row'>
+                <Row>
                 <Nav.Item>
                   <Nav.Link className="nav-link"href={brewery.website_url} target="_blank">Visit Site</Nav.Link>
                 </Nav.Item>
                 <Button variant="primary">Save Brewery</Button>
-                </div>
+                </Row>
               </Card.Footer>
             </Card>
           </CardDeck>
         ))}
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };
 

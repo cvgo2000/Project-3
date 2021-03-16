@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import SearchTrailResult from "../components/SearchResults/SearchTrailResult";
 import SearchBrewResult from "../components/SearchResults/SearchBrewResult";
 import API from "../../src/utils/API";
-// import { Card, CardDeck } from "react-bootstrap";
+import { Container, Col, Row, Form, Button } from "react-bootstrap";
 import "../components/Cards/style.css";
 import axios from "axios";
 
@@ -52,17 +52,17 @@ const Search = () => {
   }, [userInput, trails]);
 
   return (
-    <div className="container">
+    <Container fluid>
       <div className="search">
         <div className="search-container">
           <h2>Search for Trails or Brews</h2>
 
           <div className="search-form">
-            <form onSubmit={formSubmit}>
-              <label className="form-label">Search by City</label>
-              <input
+            <Form onSubmit={formSubmit}>
+              <Form.Label className="form-label">Search by City</Form.Label>
+              <Form.Control
                 type="text"
-                placeholder="Search"
+                placeholder="Denver"
                 value={userInput}
                 onChange={() => {
                   setUserInput(inputEl.current.value);
@@ -70,27 +70,28 @@ const Search = () => {
                 className="form-control"
                 ref={inputEl}
               />
-              <button
+              <Button
                 type="submit"
                 className="btn btn-primary"
                 // onClick={props.handleFormSubmit}
               >
                 Submit
-              </button>
-            </form>
+              </Button>
+            </Form>
           </div>
         </div>
         <hr></hr>
-        <div className="row">
-          <div className="col-md-6">
+        <h3>Results</h3>
+        <Row className="result-row">
+          <Col >
             <SearchTrailResult filteredTrails={filteredTrails} />
-          </div>
-          <div className="col-md-6">
+          </Col>
+          <Col>
             <SearchBrewResult breweries={breweries} />
-          </div>
-        </div>
+          </Col>
+        </Row>
       </div>
-    </div>
+    </Container>
   );
 };
 
