@@ -1,55 +1,65 @@
-import React, { useEffect } from "react";
-import SearchForm from "../components/SearchForm/SearchForm";
-import Results from "../components/SearchResults/SearchTrailResult";
-import { ListItem, List } from "../components/List";
-import DeleteBtn from "../components/DeleteBtn";
-import { Link } from "react-router-dom";
-import { useStoreContext } from "../utils/GlobalState";
-import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
+import React, { useEffect, useContext } from "react";
+import { GlobalContext } from "../utils/GlobalState";
+import { Card, CardDeck, Nav, Button, Container, Row } from "react-bootstrap";
+import { FaTrashAlt } from "react-icons/fa";
+import "../App.css";
 
-const Favorites = () => {
-  const [trails, setTrails] = useStoreContext();
-
-  const getFavorites = () => {
-    setTrails({ type: LOADING });
-    setTrails({ type: UPDATE_FAVORITES });
-  };
-
-  const removeFromFavorites = (id) => {
-    setTrails({
-      type: REMOVE_FAVORITE,
-      _id: id,
-    });
-  };
-
-  useEffect(() => {
-    getFavorites();
-  }, []);
+const Favorites = ({ type, trail }) => {
+  const { trailList } = useContext(GlobalContext);
+  const { removeTrailFromFav } = useContext(GlobalContext);
 
   return (
-    <div className="container mb-5 mt-5">
-      <h1 className="text-center">Here's All of Your Favorite Trails</h1>
-      {trails.favorites.length ? (
-        <List>
-          <h3 className="mb-5 mt-5">Click on a trail to view in detail</h3>
-          {trails.favorites.map((post) => (
-            <ListItem key={post._id}>
-              <Link to={"/trails/" + post._id}>
-                <strong>
-                  {post.title} by {post.author}
-                </strong>
-              </Link>
-              <DeleteBtn onClick={() => removeFromFavorites(post._id)} />
-            </ListItem>
-          ))}
-        </List>
-      ) : (
-        <h3>You haven't added any favorites yet!</h3>
-      )}
-      <div className="mt-5">
-        <Link to="home">Back to home</Link>
+    <Container className="fav-container">
+      <div className="header">
+        <h1 className="text-center">Here's All of Your Favorite Trails</h1>
       </div>
-    </div>
+
+      <hr></hr>
+
+      {trailList.length > 0 ? (
+        <Container className="fav-card-container">
+          {trailList.map((trail) => (
+            <CardDeck >
+              <Card
+                className="result-card shadow-lg"
+                key={trail.id}
+                style={{ width: "18rem" }}
+              >
+                <Card.Img variant="top" src={trail.image} />
+                <Card.Body>
+                  <Card.Title>{trail.trail}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {trail.location}
+                  </Card.Subtitle>
+                  <Card.Text>
+                    Distance (km): {trail.distance}
+                    <br />
+                    Difficulty: {trail.difficulty}
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer className="text-muted">
+                  <Row>
+                    <Nav.Item>
+                      <Nav.Link href={trail.link} target="_blank">
+                        Visit Site
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Button
+                      className="ctrl-btn"
+                      onClick={() => removeTrailFromFav(trail.id)}
+                    >
+                      <FaTrashAlt />
+                    </Button>
+                  </Row>
+                </Card.Footer>
+              </Card>
+            </CardDeck>
+          ))}
+        </Container>
+      ) : (
+        <h2 className="no-trails">No Trails to display</h2>
+      )}
+    </Container>
   );
 };
 

@@ -1,104 +1,40 @@
-import React, { createContext, useReducer, useContext } from "react";
-import {
-  SET_CURRENT_TRAIL,
-  REMOVE_TRAIL,
-  UPDATE_TRAILS,
-  ADD_TRAIL,
-  ADD_FAVORITE,
-  UPDATE_FAVORITES,
-  REMOVE_FAVORITE,
-  LOADING,
-} from "./actions";
+import React, { createContext, useReducer, useContext, useEffect } from "react";
+import AppReducer from "./AppReducer";
 
-const StoreContext = createContext();
-const { Provider } = StoreContext;
+//initial state
+const initialState = {
+  trailList: localStorage.getItem("trailList")
+    ? JSON.parse(localStorage.getItem("trailList"))
+    : [],
+};
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case SET_CURRENT_TRAIL:
-      return {
-        ...state,
-        currentPost: action.post,
-        loading: false,
-      };
+//create context
+export const GlobalContext = createContext(initialState);
 
-    case UPDATE_TRAILS:
-      return {
-        ...state,
-        posts: [...action.posts],
-        loading: false,
-      };
+//provider component
+export const GlobalProvider = (props) => {
+  const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    case ADD_TRAIL:
-      return {
-        ...state,
-        posts: [action.post, ...state.posts],
-        loading: false,
-      };
+  useEffect(() => {
+    localStorage.setItem("trailList", JSON.stringify(state.trailList));
+  }, [state]);
 
-    case REMOVE_TRAIL:
-      return {
-        ...state,
-        posts: state.posts.filter((post) => {
-          return post._id !== action._id;
-        }),
-      };
+  //actions
+  const addTrailToFav = (trail) => {
+    dispatch({ type: "ADD_TRAIL_TO_FAV", payload: trail });
+  };
 
-    case ADD_FAVORITE:
-      return {
-        ...state,
-        favorites: [action.post, ...state.favorites],
-        loading: false,
-      };
-
-    case UPDATE_FAVORITES:
-      return {
-        ...state,
-        favorites: [...state.favorites],
-        loading: false,
-      };
-
-    case REMOVE_FAVORITE:
-      return {
-        ...state,
-        favorites: state.favorites.filter((post) => {
-          return post._id !== action._id;
-        }),
-      };
-
-    case LOADING:
-      return {
-        ...state,
-        loading: true,
-      };
-
-    default:
-      return state;
+  const removeTrailFromFav = (id) => {
+    dispatch({type: "REMOVE_TRAIL_FROM_FAV", payload: id});
   }
+
+  return (
+    <GlobalContext.Provider
+      value={{ trailList: state.trailList, addTrailToFav, removeTrailFromFav }}
+    >
+      {props.children}
+    </GlobalContext.Provider>
+  );
 };
 
-const StoreProvider = ({ value = [], ...props }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    posts: [],
-    currentPost: {
-      _id: 0,
-      trail: "",
-      difficulty: "",
-      location: "",
-      distance: "",
-      link: "",
-      image: "",
-      rating: "",
-    },
-    favorites: [],
-    loading: false,
-  });
 
-  return <Provider value={[state, dispatch]} {...props} />;
-};
-
-const useStoreContext = () => {
-  return useContext(StoreContext);
-};
-
-export { StoreProvider, useStoreContext };
