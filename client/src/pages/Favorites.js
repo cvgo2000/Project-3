@@ -15,14 +15,14 @@ const Favorites = ({ type, trail }) => {
       </div>
 
       <hr></hr>
-
+      {console.log(trailList)}
       {trailList.length > 0 ? (
         <Container className="fav-card-container">
           {trailList.map((trail) => (
-            <CardDeck >
+            <CardDeck>
               <Card
                 className="result-card shadow-lg"
-                key={trail.id}
+                key={trail._id}
                 style={{ width: "18rem" }}
               >
                 <Card.Img variant="top" src={trail.image} />
@@ -46,7 +46,7 @@ const Favorites = ({ type, trail }) => {
                     </Nav.Item>
                     <Button
                       className="ctrl-btn"
-                      onClick={() => removeTrailFromFav(trail.id)}
+                      onClick={() => removeTrailFromFav(trail._id)}
                     >
                       <FaTrashAlt />
                     </Button>

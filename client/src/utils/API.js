@@ -15,7 +15,7 @@ export default {
   },
   // Saves a trail to the database
   createTrail: function (trailData) {
-    return axios.post("/api/trails", trailData).then((result) => result.data);
+    return axios.post(`/api/trails`, trailData).then((result) => result.data);
   },
   // Shows saved trails
   savedTrails: function () {

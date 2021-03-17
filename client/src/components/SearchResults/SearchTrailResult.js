@@ -3,7 +3,6 @@ import { Card, CardDeck, Nav, Button, Container, Row } from "react-bootstrap";
 import { GlobalContext } from "../../utils/GlobalState";
 
 const SearchTrailResult = ({ filteredTrails }) => {
-  
   //code for saving to favorites
   const { addTrailToFav, trailList } = useContext(GlobalContext);
 
@@ -13,9 +12,12 @@ const SearchTrailResult = ({ filteredTrails }) => {
 
   return (
     <Container>
+      {/* {console.log(storedTrail)} */}
       <Container className="results">
-        Trail Results
+        <h5>Trail Results</h5>
         {filteredTrails.map((trail) => (
+          // console.log(trail )
+          // if trail is in storedTrail then false
           <CardDeck>
             <Card
               className="result-card"

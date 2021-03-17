@@ -1,14 +1,67 @@
-import React, { useState } from "react";
-import { CardDeck, Card, Button, Container, Modal, Form } from "react-bootstrap";
+import React, { useState, useRef } from "react";
+import {
+  CardDeck,
+  Card,
+  Button,
+  Container,
+  Modal,
+  Form,
+} from "react-bootstrap";
 import "../../components/Cards/style.css";
 import hiking from "../../img/steamboat_hiking.jpg";
 import "../Add/style.css";
+import API from "../../utils/API";
 
 const Add = () => {
+  //Pop up Modal
   const [show, popup] = useState(false);
-
   const modalOpen = () => popup(true);
   const modalClose = () => popup(false);
+
+  const [formObject, setFormObject] = useState({
+    trail: "",
+    location: "",
+    distance: "",
+    difficulty: "",
+    rating: "",
+  });
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value });
+  }
+
+  function postTrail(e) {
+    e.preventDefault();
+    if (
+      formObject.trail &&
+      formObject.location &&
+      formObject.distance &&
+      formObject.difficulty &&
+      formObject.rating
+    ) {
+      API.createTrail({
+        name: formObject.trail,
+        location: formObject.location,
+        distance: formObject.distance,
+        difficulty: formObject.difficulty,
+        rating: formObject.rating,
+      })
+        .then(() =>
+          setFormObject({
+            trail: "",
+            location: "",
+            distance: "",
+            difficulty: "",
+            rating: "",
+          })
+        )
+        .then(() => console.log("add", formObject))
+        .catch((err) => console.log(err));
+    }
+
+    console.log("hello", formObject);
+  }
 
   return (
     <Container className="add-container">
@@ -30,28 +83,42 @@ const Add = () => {
                   <Modal.Title>Enter in a new trail!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <Form>
+                  <Form onSubmit={postTrail}>
                     <Form.Group controlId="exampleForm.ControlInput1">
                       <Form.Label>Trail name</Form.Label>
                       <Form.Control
+                        onChange={handleInputChange}
+                        name="trail"
                         placeholder="Devil's Backbone"
+                        value={formObject.name}
                       />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput1">
                       <Form.Label>Trail location/city</Form.Label>
                       <Form.Control
+                        onChange={handleInputChange}
+                        name="location"
                         placeholder="Loveland"
+                        value={formObject.location}
                       />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput1">
                       <Form.Label>Trail distance in km</Form.Label>
                       <Form.Control
+                        onChange={handleInputChange}
+                        name="distance"
                         placeholder="10"
+                        value={formObject.distance}
                       />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlSelect1">
                       <Form.Label>Select difficulty</Form.Label>
-                      <Form.Control as="select">
+                      <Form.Control
+                        as="select"
+                        onChange={handleInputChange}
+                        name="difficulty"
+                        value={formObject.difficulty}
+                      >
                         <option>Easy</option>
                         <option>Easy/Intermediate</option>
                         <option>Intermediate</option>
@@ -61,7 +128,13 @@ const Add = () => {
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlSelect2">
                       <Form.Label>Pick your rating in stars</Form.Label>
-                      <Form.Control as="select" multiple>
+                      <Form.Control
+                        as="select"
+                        multiple
+                        onChange={handleInputChange}
+                        name="rating"
+                        value={formObject.rating}
+                      >
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -75,7 +148,7 @@ const Add = () => {
                   <Button variant="secondary" onClick={modalClose}>
                     Close
                   </Button>
-                  <Button variant="primary" onClick={modalClose}>
+                  <Button type="submit" variant="primary" onClick={postTrail}>
                     Save
                   </Button>
                 </Modal.Footer>
