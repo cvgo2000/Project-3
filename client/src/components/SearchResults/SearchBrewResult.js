@@ -7,7 +7,7 @@ const SearchBrewResult = ({ breweries }) => {
   return (
     <Container>
       <Container className="results">
-        Brewery Results
+        <h5>Brewery Results</h5>
         {breweries.map((brewery) => (
           <CardDeck>
             <Card className="result-card" key={brewery.id} style={{ width: "18rem"}}>

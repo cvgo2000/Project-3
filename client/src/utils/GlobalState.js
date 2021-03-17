@@ -25,8 +25,9 @@ export const GlobalProvider = (props) => {
   };
 
   const removeTrailFromFav = (id) => {
-    dispatch({type: "REMOVE_TRAIL_FROM_FAV", payload: id});
-  }
+    console.log(id, state);
+    dispatch({ type: "REMOVE_TRAIL_FROM_FAV", payload: id });
+  };
 
   return (
     <GlobalContext.Provider
@@ -36,5 +37,3 @@ export const GlobalProvider = (props) => {
     </GlobalContext.Provider>
   );
 };
-
-
