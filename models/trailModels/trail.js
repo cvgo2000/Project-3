@@ -9,11 +9,11 @@ const trailSchema = new Schema({
   //location will be a string
   location: { type: String, required: true },
   //distance will be a value in miles
-  distance: Number,
+  distance: { type: Number, required: true },
   //link will be an href/string
-  link: { type: String, required: true },
+  link: { type: String },
   //link to image will be an href/string
-  image: { type: String, required: true },
+  image: { type: String },
   //rating will be a string
   rating: { type: String, required: true },
 });

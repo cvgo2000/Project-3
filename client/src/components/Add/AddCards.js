@@ -20,9 +20,9 @@ const Add = () => {
 
   const [formObject, setFormObject] = useState({
     trail: "",
+    difficulty: "",
     location: "",
     distance: "",
-    difficulty: "",
     rating: "",
   });
 
@@ -35,24 +35,24 @@ const Add = () => {
     e.preventDefault();
     if (
       formObject.trail &&
+      formObject.difficulty &&
       formObject.location &&
       formObject.distance &&
-      formObject.difficulty &&
       formObject.rating
     ) {
       API.createTrail({
-        name: formObject.trail,
-        location: formObject.location,
-        distance: formObject.distance,
+        trail: formObject.trail,
         difficulty: formObject.difficulty,
+        location: formObject.location,
+        distance: parseInt(formObject.distance),
         rating: formObject.rating,
       })
         .then(() =>
           setFormObject({
             trail: "",
+            difficulty: "",
             location: "",
             distance: "",
-            difficulty: "",
             rating: "",
           })
         )
@@ -90,7 +90,7 @@ const Add = () => {
                         onChange={handleInputChange}
                         name="trail"
                         placeholder="Devil's Backbone"
-                        value={formObject.name}
+                        value={formObject.trail}
                       />
                     </Form.Group>
                     <Form.Group controlId="exampleForm.ControlInput1">
@@ -107,6 +107,7 @@ const Add = () => {
                       <Form.Control
                         onChange={handleInputChange}
                         name="distance"
+                        type="number"
                         placeholder="10"
                         value={formObject.distance}
                       />

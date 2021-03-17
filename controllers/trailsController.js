@@ -30,6 +30,8 @@ module.exports = {
 
   //add a trail to the DB
   create: function (req, res) {
+    // console.log(typeof req.body.distance);
+    console.log(req.body);
     db.Trail.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
