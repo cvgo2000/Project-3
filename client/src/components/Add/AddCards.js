@@ -6,6 +6,7 @@ import {
   Container,
   Modal,
   Form,
+  Alert,
 } from "react-bootstrap";
 import "../../components/Cards/style.css";
 import hiking from "../../img/steamboat_hiking.jpg";
@@ -56,7 +57,7 @@ const Add = () => {
             rating: "",
           })
         )
-        .then(() => console.log("add", formObject))
+        .then(alert("Your trail was added!"))
         .catch((err) => console.log(err));
     }
 
