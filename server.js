@@ -22,7 +22,7 @@ const db = mongojs(databaseURL, collections);
 
 //Added connection to seedDB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/Trails",
+  process.env.MONGODB_URI || "mongodb://localhost/trails_db",
   {
     useNewUrlParser: true,
     useFindAndModify: false,
